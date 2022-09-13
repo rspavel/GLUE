@@ -11,7 +11,7 @@ cmake:gnu:
     - apt install build-essential mpich python3-dev cmake python3-numpy libsqlite3-dev python3-torch python3-sklearn -y
     # And now we actually build
     - mkdir bld && cd bld
-    - cmake ..
+    - cmake ../GLUECode
     - make
   artifacts:
     paths:
