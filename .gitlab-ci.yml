@@ -46,17 +46,3 @@ test:gnu_mpi:
   dependencies:
     - cmake:gnu
 
-test:gnu_collective:
-  stage: test
-  image: debian:stable
-  script:
-    # All of this should be in a separate image
-    - apt update
-    - apt install build-essential mpich python3-dev cmake python3-numpy libsqlite3-dev python3-torch python3-sklearn -y
-    # And now we actually test
-    - mkdir mpi && cd mpi
-    - bash ../examples/fullTest_collectiveICF.sh ../bld/tests/fullTest_collectiveICF
-  needs: ["cmake:gnu"]
-  dependencies:
-    - cmake:gnu
-
